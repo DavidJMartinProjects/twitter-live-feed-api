@@ -25,7 +25,7 @@ public class MessageProducer {
     private RabbitTemplate template;
 
     @Bean
-    ConnectionFactory connectionFactory() {
+    public ConnectionFactory connectionFactory() {
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
         connectionFactory.setUsername("user");
         connectionFactory.setPassword("BSwrxgfh0W");
@@ -35,7 +35,7 @@ public class MessageProducer {
     }
 
     @Bean
-    RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate();
         rabbitTemplate.setConnectionFactory(connectionFactory);
         return rabbitTemplate;
