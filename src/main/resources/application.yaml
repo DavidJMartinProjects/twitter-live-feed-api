@@ -3,8 +3,13 @@ server:
 
 twitter-listener-service:
   tweet-keywords:
-    - Trump
-    - USA
-    - Competition
-    - Democrates
+    - Forex
+    - EURUSD
+    - DXY
+    - FX
+    - EURUSD
     - economy
+    - news
+    - latestnews
+    - euronews
+    - breaking news

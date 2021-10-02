@@ -30,10 +30,10 @@ public class TweetService {
 
     public List<TweetDto> getTweets() {
         return tweetRepository.findAll()
-                .stream()
-                .map(tweetMapper::toDto)
-                .sorted((t1, t2) -> Long.compare(t2.getId(), t1.getId()))
-                .collect(Collectors.toList());
+            .stream()
+            .map(tweetMapper::toDto)
+            .sorted((t1, t2) -> Long.compare(t2.getId(), t1.getId()))
+            .collect(Collectors.toList());
     }
 
     public TweetDto saveTweet(TweetDto tweetDto) {

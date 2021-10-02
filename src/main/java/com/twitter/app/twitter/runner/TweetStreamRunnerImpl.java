@@ -18,7 +18,7 @@ import java.util.Arrays;
  */
 @Component
 @Slf4j
-public class TwitterStreamRunnerImpl implements StreamRunner {
+public class TweetStreamRunnerImpl implements StreamRunner {
 
     @Autowired
     private TweetKeywordsConfig tweetKeywordsConfig;
