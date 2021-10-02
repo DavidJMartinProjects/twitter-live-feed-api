@@ -1,28 +1,10 @@
 server:
-  port: 80
+  port: 81
 
 twitter-listener-service:
   tweet-keywords:
-    - '#Diablo 2 Resurrected'
-    - '#Diablo 2'
-    - '#D2R'
-    - '#LateLateShow'
-    - '#Bob Geldof'
-    - '#Athlone'
-    - '#Ireland'
-    - '#BobGeldof'
-    - '#LateLate'
-    - '#US'
-    - '#America'
-    - '#Bitcoin'
-    - '#Crypto'
-    - '#Forex'
-    - '#Trump'
-    - '#USA'
-
-
-
-
-
-
-
+    - Trump
+    - USA
+    - Competition
+    - Democrates
+    - economy

@@ -12,7 +12,7 @@ public class MessageQueue {
 
     @Bean
     public Queue myQueue() {
-        return new Queue("tweetQueue", false);
+        return new Queue("myQueue", false);
     }
 
 }

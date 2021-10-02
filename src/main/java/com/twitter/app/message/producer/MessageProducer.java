@@ -9,12 +9,12 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * @author david
  */
-@Service
+@Component
 @Slf4j
 public class MessageProducer {
 
@@ -43,8 +43,8 @@ public class MessageProducer {
 
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void sendMessage(TweetDto tweet) {
-        this.template.convertAndSend(queue.getName(), tweet);
-        log.info(" [x] Sent tweet to queue.");
+        this.template.convertAndSend(queue.getName(), tweet.toString());
+        log.info("[x] Sent tweet to queue.");
     }
 
 }

@@ -1,13 +1,17 @@
 package com.twitter.app.model.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author david
  */
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class TweetDto {
 
     private long id;
