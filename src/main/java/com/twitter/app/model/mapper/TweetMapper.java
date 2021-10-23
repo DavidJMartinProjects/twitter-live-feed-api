@@ -2,10 +2,11 @@ package com.twitter.app.model.mapper;
 
 import com.twitter.app.model.dto.TweetDto;
 import com.twitter.app.model.entity.TweetEntity;
-import lombok.extern.slf4j.Slf4j;
+
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author david
