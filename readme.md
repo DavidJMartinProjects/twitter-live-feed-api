@@ -1,7 +1,7 @@
 ## Project Description
 
 
-# Tweeter Service
+# Live Tweeter Feed Service
 
 This is a Springboot project that creates a real-time stream to Twitter API, returning all tweets based on a set of specified keywords.  
 
