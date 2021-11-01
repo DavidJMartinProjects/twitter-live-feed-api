@@ -1,14 +1,9 @@
-server:
-  port: 81
-
 twitter-listener-service:
+  event:
+    queue:
+      name: "tweetQueue"
+
   tweet-keywords:
-    - Forex
-    - EURUSD
-    - DXY
-    - FX
-    - EURUSD
-    - economy
     - news
     - latestnews
     - euronews

@@ -1,6 +1,7 @@
 package com.twitter.app.message.queue;
 
 import org.springframework.amqp.core.Queue;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,9 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MessageQueue {
 
+    @Value("${twitter-listener-service.event.queue.name}")
+    private String queueName;
+
     @Bean
     public Queue myQueue() {
-        return new Queue("tweetQueue", false);
+        return new Queue(queueName, false);
     }
 
 }

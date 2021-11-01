@@ -1,7 +1,5 @@
 package com.twitter.app.message.producer;
 
-import com.twitter.app.model.dto.TweetDto;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -10,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import com.twitter.app.model.dto.TweetDto;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author david
@@ -43,8 +44,12 @@ public class MessageProducer {
 
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void sendMessage(TweetDto tweet) {
-        this.template.convertAndSend(queue.getName(), tweet.toString());
-        log.info("[x] Sent tweet to queue.");
+        try {
+            this.template.convertAndSend(queue.getName(), tweet.toString());
+            log.info("[x] Sent tweet to queue.");
+        } catch (Exception exception) {
+            log.error("unable to send message to topic.");
+        }
     }
 
 }

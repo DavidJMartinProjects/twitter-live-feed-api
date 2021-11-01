@@ -1,7 +1,7 @@
 package com.twitter.app.controller;
 
 import com.twitter.app.model.dto.TweetDto;
-import com.twitter.app.service.TweetService;
+import com.twitter.app.service.impl.TweetServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +19,10 @@ import java.util.List;
 @Slf4j
 public class TweetController {
 
-    public static final String TWEET_BASE_PATH = "/tweet";
+    public static final String TWEET_BASE_PATH = "/tweets";
 
     @Autowired
-    private TweetService tweetService;
+    private TweetServiceImpl tweetService;
 
     @GetMapping
     public ResponseEntity<List<TweetDto>> getTweets() {

@@ -2,7 +2,7 @@ package com.twitter.app.twitter.listener;
 
 import com.twitter.app.message.producer.MessageProducer;
 import com.twitter.app.model.dto.TweetDto;
-import com.twitter.app.service.TweetService;
+import com.twitter.app.service.impl.TweetServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,7 +17,7 @@ import twitter4j.StatusAdapter;
 public class TweetListener extends StatusAdapter {
 
     @Autowired
-    private TweetService tweetService;
+    private TweetServiceImpl tweetService;
 
     @Autowired
     private MessageProducer messageProducer;
