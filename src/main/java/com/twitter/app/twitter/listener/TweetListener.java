@@ -3,9 +3,11 @@ package com.twitter.app.twitter.listener;
 import com.twitter.app.message.producer.MessageProducer;
 import com.twitter.app.model.dto.TweetDto;
 import com.twitter.app.service.impl.TweetServiceImpl;
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import lombok.extern.slf4j.Slf4j;
 import twitter4j.Status;
 import twitter4j.StatusAdapter;
 
@@ -30,14 +32,14 @@ public class TweetListener extends StatusAdapter {
                 .text(status.getText())
                 .place(status.getPlace().getCountry())
                 .build();
-
+                
         log.info("[x] received tweet");
-        tweetService.saveTweet(tweet);
-
+        
         try {
+            tweetService.saveTweet(tweet);  
             messageProducer.sendMessage(tweet);
         } catch (Exception exception) {
-            log.info("exception: {}", exception.getMessage(), exception);
+            log.info("encountered exception handling tweet: {}", exception.getMessage(), exception);
         }
     }
 
