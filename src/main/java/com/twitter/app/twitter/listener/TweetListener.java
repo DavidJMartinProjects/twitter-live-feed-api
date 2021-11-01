@@ -32,13 +32,13 @@ public class TweetListener extends StatusAdapter {
                 .build();
 
         log.info("[x] received tweet");
+        tweetService.saveTweet(tweet);
+
         try {
-            tweetService.saveTweet(tweet);
             messageProducer.sendMessage(tweet);
         } catch (Exception exception) {
             log.info("exception: {}", exception.getMessage(), exception);
         }
-
     }
 
 }
