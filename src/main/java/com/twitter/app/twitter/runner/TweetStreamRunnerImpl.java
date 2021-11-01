@@ -40,14 +40,14 @@ public class TweetStreamRunnerImpl implements StreamRunner {
     public void start() {
         twitterStream = new TwitterStreamFactory().getInstance();
         twitterStream.addListener(tweetListener);
-        addKeywordFilter();
+        addKeywordFilter(twitterStream);
     }
 
-    private void addKeywordFilter() {
+    private void addKeywordFilter(TwitterStream twitterStream) {
         String[] keywords = tweetKeywordsConfig.getTweetKeywords().toArray(new String[0]);
         FilterQuery filterQuery = new FilterQuery(keywords);
-        twitterStream.filter(filterQuery);
-        log.info("Started filtering twitter stream for keywords: {}", Arrays.toString(keywords));
+        this.twitterStream.filter(filterQuery);
+        log.info("filtering twitter stream for keywords: {}", Arrays.toString(keywords));
     }
 
 }
