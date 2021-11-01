@@ -7,7 +7,7 @@ This is a Springboot project that creates a real-time stream to Twitter API, ret
 
 The microservice will store the tweets in its own db before broadcasting all updates to an event topic that can be consumed by other services. 
 
-A REST based controller was also implemented allowing the tweet feed to be consumed by a UI.
+A REST based controller was also implemented allowing the tweet feed to be consumed via a REST API.
 
 ## Technologies & Frameworks
 
