@@ -1,15 +1,16 @@
 package com.twitter.app.controller;
 
-import com.twitter.app.model.dto.TweetDto;
-import com.twitter.app.service.impl.TweetServiceImpl;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.twitter.app.model.dto.TweetDto;
+import com.twitter.app.service.TweetService;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author david
@@ -22,7 +23,7 @@ public class TweetController {
     public static final String TWEET_BASE_PATH = "/tweets";
 
     @Autowired
-    private TweetServiceImpl tweetService;
+    private TweetService tweetService;
 
     @GetMapping
     public ResponseEntity<List<TweetDto>> getTweets() {
