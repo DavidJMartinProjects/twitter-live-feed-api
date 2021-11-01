@@ -24,7 +24,7 @@ This microservice is configured to be deployed independently using:
 - Docker (DockerFile)
 - Docker Compose (docker-compose.yaml)
 - Helm (Helm Chart)
-
+<!-- 
 
 ## ToDo
 Please Note: this project is WIP
@@ -35,4 +35,4 @@ add Helm chart
 
 add testcases for controller
 
-Write a proper readme.md to explain the project
+Write a proper readme.md to explain the project -->
