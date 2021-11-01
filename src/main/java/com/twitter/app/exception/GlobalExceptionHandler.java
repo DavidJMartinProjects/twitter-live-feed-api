@@ -23,20 +23,20 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(value = InternalServerError.class)
-    @ResponseStatus(code = HttpStatus.CONFLICT)
-    @ResponseBody
-    ErrorData handleInternalServerError(InternalServerError exception, HttpServletRequest request) {
-        log.info("Handling exception: InternalServerError.");
-        return buildErrorData("500", "encountered internal server error.", request);
-    }
-
     @ExceptionHandler(DataAccessException.class)
     @ResponseStatus(code = HttpStatus.CONFLICT)
     @ResponseBody
     public ErrorData handleDataAccessException(HttpServletRequest request, DataAccessException ex) {
         log.info("handling DataAccessException: {}.", ex.getMessage());
         return buildErrorData("encountered exception.", ex.getMessage(), request);
+    }
+
+    @ExceptionHandler(value = InternalServerError.class)
+    @ResponseStatus(code = HttpStatus.CONFLICT)
+    @ResponseBody
+    ErrorData handleInternalServerError(InternalServerError exception, HttpServletRequest request) {
+        log.info("Handling exception: InternalServerError.");
+        return buildErrorData("500", "encountered internal server error.", request);
     }
 
     private ErrorData buildErrorData(String errorCode, String message, HttpServletRequest request) {
