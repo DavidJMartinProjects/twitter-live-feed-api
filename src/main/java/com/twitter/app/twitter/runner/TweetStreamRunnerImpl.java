@@ -47,7 +47,7 @@ public class TweetStreamRunnerImpl implements StreamRunner {
         String[] keywords = tweetKeywordsConfig.getTweetKeywords().toArray(new String[0]);
         FilterQuery filterQuery = new FilterQuery(keywords);
         this.twitterStream.filter(filterQuery);
-        log.info("filtering twitter stream for keywords: {}", Arrays.toString(keywords));
+        log.info("filtering tweets with keywords: {}", Arrays.toString(keywords));
     }
 
 }
