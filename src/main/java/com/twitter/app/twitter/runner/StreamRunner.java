@@ -1,7 +1,7 @@
 package com.twitter.app.twitter.runner;
 
 /**
- * @author david
+ * @author davidjmartin
  */
 public interface StreamRunner {
     void start();

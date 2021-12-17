@@ -12,7 +12,7 @@ import twitter4j.Status;
 import twitter4j.StatusAdapter;
 
 /**
- * @author david
+ * @author davidjmartin
  */
 @Component
 @Slf4j

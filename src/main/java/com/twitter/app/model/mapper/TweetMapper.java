@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author david
+ * @author davidjmartin
  */
 @Component
 @Slf4j

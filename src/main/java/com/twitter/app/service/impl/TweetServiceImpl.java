@@ -15,7 +15,7 @@ import com.twitter.app.service.TweetService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author david
+ * @author davidjmartin
  */
 @Service
 @Slf4j

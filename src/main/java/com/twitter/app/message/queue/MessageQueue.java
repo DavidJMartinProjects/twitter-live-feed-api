@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author david
+ * @author davidjmartin
  */
 @Configuration
 public class MessageQueue {

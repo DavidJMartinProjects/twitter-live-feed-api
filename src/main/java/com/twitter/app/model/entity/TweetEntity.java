@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 /**
- * @author david
+ * @author davidjmartin
  */
 @Entity
 @Table(name = "tweet")

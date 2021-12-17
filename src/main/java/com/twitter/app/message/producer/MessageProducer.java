@@ -13,7 +13,7 @@ import com.twitter.app.model.dto.TweetDto;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author david
+ * @author davidjmartin
  */
 @Component
 @Slf4j
