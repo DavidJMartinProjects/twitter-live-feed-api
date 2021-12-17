@@ -39,7 +39,7 @@ public class TweetListener extends StatusAdapter {
             tweetService.saveTweet(tweet);  
             messageProducer.sendMessage(tweet);
         } catch (Exception exception) {
-            log.info("encountered exception handling tweet: {}", exception.getMessage(), exception);
+            log.debug("encountered exception handling tweet: {}", exception.getMessage(), exception);
         }
     }
 

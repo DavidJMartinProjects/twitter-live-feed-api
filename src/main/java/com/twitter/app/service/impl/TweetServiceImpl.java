@@ -42,7 +42,7 @@ public class TweetServiceImpl implements TweetService {
     @Override
     public TweetDto saveTweet(TweetDto tweetDto) {
         TweetEntity tweet = tweetRepository.save(tweetMapper.toEntity(tweetDto));
-        log.info("saved tweet");
+        log.debug("saved tweet");
         return tweetMapper.toDto(tweet);
     }
 

@@ -27,7 +27,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseStatus(code = HttpStatus.CONFLICT)
     @ResponseBody
     public ErrorData handleDataAccessException(HttpServletRequest request, DataAccessException ex) {
-        log.info("handling DataAccessException: {}.", ex.getMessage());
+        log.debug("handling DataAccessException: {}.", ex.getMessage());
         return buildErrorData("encountered exception.", ex.getMessage(), request);
     }
 
@@ -35,7 +35,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseStatus(code = HttpStatus.CONFLICT)
     @ResponseBody
     ErrorData handleInternalServerError(InternalServerError exception, HttpServletRequest request) {
-        log.info("Handling exception: InternalServerError.");
+        log.debug("Handling exception: InternalServerError.");
         return buildErrorData("500", "encountered internal server error.", request);
     }
 
